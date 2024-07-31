@@ -49,6 +49,13 @@ function solveGrid(grid) {
 }
 
 function getGrid() {
-  //Linker le fichier python pour que le fichier python génère la grille. Cette fonction à pour but de la récupérer.
-  return grid;
+  fetch("sudoku.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const solvedGrid = solveSudoku(data);
+      displayGrid(solvedGrid);
+    })
+    .catch((error) => console.error("Error loading the Sudoku:", error));
 }
+
+console.log(getGrid());
