@@ -2,3 +2,28 @@ button {
   height: 100px;
   width: 300px;
 }
+
+#sudokuGrid {
+  border-collapse: collapse;
+  margin: auto;
+}
+
+#sudokuGrid tr {
+  border: 1px;
+}
+
+#sudokuGrid td {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid gray;
+  font-size: 20px;
+}
+#sudokuGrid td:nth-child(3n + 1) {
+  border-left: 2px solid black;
+}
+
+#sudokuGrid tr:nth-child(3n + 1) td {
+  border-top: 2px solid black;
+}

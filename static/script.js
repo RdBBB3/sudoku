@@ -74,4 +74,31 @@ function putBlanksInGrid(grid, numberToRemove) {
   return grid;
 }
 
-function displayFront(finishedGrid) {}
+function displayFront(finishedGrid) {
+  var table = document.getElementById("sudokuGrid");
+  for (let i = 0; i < 9; i++) {
+    var row = document.createElement("tr");
+    for (let y = 0; y < 9; y++) {
+      var cell = document.createElement("td");
+      if (finishedGrid[i][y] == 0) {
+        cell.textContent = "";
+        cell.contentEditable = true;
+      } else {
+        cell.textContent = finishedGrid[i][y];
+      }
+      row.appendChild(cell);
+    }
+    table.appendChild(row);
+  }
+}
+
+// function errorGestion() {
+//   var error = document.getElementById("errors");
+//   if (document.get)
+//   error.appendChild(errors)
+// }
+
+getGrid().then((grid) => {
+  let finishedGrid = putBlanksInGrid(grid, 20);
+  displayFront(finishedGrid);
+});
