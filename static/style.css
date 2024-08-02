@@ -1,6 +1,9 @@
 button {
   height: 100px;
   width: 300px;
+  align-items: center;
+  vertical-align: middle;
+  margin: auto;
 }
 
 #sudokuGrid {
@@ -26,4 +29,8 @@ button {
 
 #sudokuGrid tr:nth-child(3n + 1) td {
   border-top: 2px solid black;
+}
+
+#titre-p1 {
+  text-align: center;
 }
